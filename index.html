@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weather</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+function myFunction() {
+
+  var ip = document.getElementById("ip").value;
+  
+  var request = new XMLHttpRequest();
+
+  
+  request.onreadystatechange = function () {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.responseText);
+
+  if (request.readyState == 4 && this.status == 200 && data.cod == 200 ) {
+	document.getElementById("city_name").innerHTML=data.name;
+	document.getElementById("temp").innerHTML=data.main.temp+" &#8451;";
+	document.getElementById("min_temp").innerHTML=data.main.temp_min+" &#8451;";
+	document.getElementById("max_temp").innerHTML=data.main.temp_max+" &#8451;";
+	document.getElementById("humidity").innerHTML=data.main.humidity+" &#37;";
+	document.getElementById("wd").innerHTML=data.weather[0].main + " ("+data.weather[0].description+")";
+	document.getElementById("ws").innerHTML=data.wind.speed+" meter/sec";
+	document.getElementById("country").innerHTML=data.sys.country;
+
+  } else {
+    
+  }
+}
+request.open('GET', "http://api.openweathermap.org/data/2.5/weather?q="+ip+"&units=metric&appid=9ea26581b3023b5e7a0a7a114fba743e", true);
+request.send();
+}
+</script>
+</head>
+
+<body>
+  
+<div class="container mt-3">
+  <h1>Weather App</h1>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" id="ip" placeholder="City Name">
+    <div class="input-group-append">
+      <button class="btn btn-success" onclick="myFunction()" >Enter</button>  
+     </div>
+  </div>
+
+  
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+        
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>City</th>
+        <th id="city_name">--</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Temperature</td>
+        <td id="temp">-- &#8451;</td>
+        
+      </tr>
+      <tr>
+        <td>Min Temperature</td>
+        <td id="min_temp">-- &#8451;</td>
+        
+      </tr>
+      <tr>
+        <td>Max Temperature</td>
+        <td id="max_temp">-- &#8451;</td>
+        
+      </tr>
+	  <tr>
+        <td>Humidity</td>
+        <td id="humidity">-- &#37;</td>
+        
+      </tr>
+	  <tr>
+        <td>Weather Description</td>
+        <td id="wd">--</td>
+        
+      </tr>
+	  <tr>
+        <td>Wind Speed</td>
+        <td id="ws">--  meter/sec</td>
+        
+      </tr>
+	  <tr>
+        <td>Country</td>
+        <td id="country">--</td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
