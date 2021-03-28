@@ -13,7 +13,7 @@ The API provides the current weather data for any location on Earth including ov
 
 ### Visit Website
 
-Click Here [Weather App](https://dhananjayvarmag.github.io/Simple-Weather-API-Project/)
+Click Here [Weather App](https://dhananjayvarmag.github.io/Weather-App/)
 
 ## Built With
 
@@ -24,7 +24,7 @@ Click Here [Weather App](https://dhananjayvarmag.github.io/Simple-Weather-API-Pr
 
 ## Versions
 
-* 1 - [Simple Weather App](https://github.com/dhananjayvarmag/Simple-Weather-API-Project/tree/fa34f3b2fc0d2798d8f31859576c091cb9967c50)
+* 1 - [Simple Weather App](https://github.com/dhananjayvarmag/Weather-App/tree/fa34f3b2fc0d2798d8f31859576c091cb9967c50)
 
 ## Author
 
