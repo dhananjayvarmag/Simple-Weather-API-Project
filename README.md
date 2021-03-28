@@ -24,7 +24,7 @@ Click Here [Weather App](https://dhananjayvarmag.github.io/Simple-Weather-API-Pr
 
 ## Versions
 
-* Day 1 - Simple Weather App
+* 1 - [Simple Weather App](https://github.com/dhananjayvarmag/Simple-Weather-API-Project/tree/fa34f3b2fc0d2798d8f31859576c091cb9967c50)
 
 ## Author
 
