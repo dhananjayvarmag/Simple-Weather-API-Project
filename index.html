@@ -29,7 +29,7 @@ function myFunction() {
 	document.getElementById("humidity").innerHTML=data.main.humidity+" &#37;";
 	document.getElementById("wd").innerHTML=data.weather[0].main + " ("+data.weather[0].description+")";
 	document.getElementById("ws").innerHTML=data.wind.speed+" meter/sec";
-	getCountry(data.sys.country);
+	document.getElementById("country").innerHTML=data.sys.country;
 
   } else {
     
