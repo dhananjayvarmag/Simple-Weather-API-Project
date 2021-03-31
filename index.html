@@ -11,17 +11,19 @@
   <script src="country.js"></script>
   <script>
 function myFunction() {
-
+  
   var ip = document.getElementById("ip").value;
   
   var request = new XMLHttpRequest();
 
   
   request.onreadystatechange = function () {
-  // Begin accessing JSON data here
+  
+  if (request.readyState == 4) {
   var data = JSON.parse(this.responseText);
-
-  if (request.readyState == 4 && this.status == 200 && data.cod == 200 ) {
+  if(data.cod == 200)
+  {
+    
 	document.getElementById("city_name").innerHTML=data.name;
 	document.getElementById("temp").innerHTML=data.main.temp+" &#8451;";
 	document.getElementById("min_temp").innerHTML=data.main.temp_min+" &#8451;";
@@ -30,10 +32,18 @@ function myFunction() {
 	document.getElementById("wd").innerHTML=data.weather[0].main + " ("+data.weather[0].description+")";
 	document.getElementById("ws").innerHTML=data.wind.speed+" meter/sec";
 	getCountry(data.sys.country);
+	
+	document.getElementById("table").style.display = "block";
+	document.getElementById("elsecase").style.display = "none";
 
   } else {
+     
+    document.getElementById("elsecase").innerHTML="<strong>Sorry!</strong> We can't find '"+ip+"' in our supported cities.";
+	document.getElementById("table").style.display = "none";
+	document.getElementById("elsecase").style.display = "block";
     
   }
+}
 }
 request.open('GET', "https://api.openweathermap.org/data/2.5/weather?q="+ip+"&units=metric&appid=9ea26581b3023b5e7a0a7a114fba743e", true);
 request.send();
@@ -58,7 +68,7 @@ request.send();
 <br>
 <br>
 <br>
-<div class="container">
+<div class="container" id="table">
         
   <table class="table table-hover">
     <thead>
@@ -107,6 +117,13 @@ request.send();
     </tbody>
   </table>
 </div>
-
+</div>
+<div class="alert alert-info" style="width:65%;text-align:center;margin:auto" id="elsecase">
+  
+</div>
+<script>
+document.getElementById("table").style.display = "none";
+  document.getElementById("elsecase").style.display = "none";
+</script>
 </body>
 </html>
