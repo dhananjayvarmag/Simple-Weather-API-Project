@@ -10,6 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="country.js"></script>
   <script>
+  
 function myFunction() {
   
   var ip = document.getElementById("ip").value;
@@ -59,7 +60,7 @@ request.send();
   <div class="input-group mb-3">
     <input type="text" class="form-control" id="ip" placeholder="City Name">
     <div class="input-group-append">
-      <button class="btn btn-success" onclick="myFunction()" >Enter</button>  
+      <button id = "myButton" class="btn btn-success" onclick="myFunction()" >Enter</button>  
      </div>
   </div>
 
@@ -122,8 +123,18 @@ request.send();
   
 </div>
 <script>
-document.getElementById("table").style.display = "none";
+  document.getElementById("table").style.display = "none";
   document.getElementById("elsecase").style.display = "none";
+  var input = document.getElementById("ip");
+  input.addEventListener("keydown", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myButton").click();
+  }
+});
 </script>
 </body>
 </html>
