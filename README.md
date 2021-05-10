@@ -22,12 +22,6 @@ Click Here [Weather App](https://dhananjayvarmag.github.io/Weather-App/)
 * Bootstrap 4
 * AJAX
 
-## Versions
-
-* 1 - [Simple Weather App](https://github.com/dhananjayvarmag/Weather-App/tree/fa34f3b2fc0d2798d8f31859576c091cb9967c50)
-* 2 - [Conversion of country code into country name](https://github.com/dhananjayvarmag/Weather-App/tree/049880d3a831bffbf42036d38a4e64da4e0d3647)
-* 3 - [Added Enter Key functionality.Error message if the city is not available in API](https://github.com/dhananjayvarmag/Weather-App/tree/f73f8b6ab37b7b510a4f79b83cf4b77daac54b53)
-
 ## Author
 
 * **Dhananjay Varma G**  [Profile](https://dhananjayvarmag.github.io/)
