@@ -22,9 +22,6 @@ Click Here [Weather App](https://dhananjayvarmag.github.io/Weather-App/)
 * Bootstrap 4
 * AJAX
 
-## Author
-
-* **Dhananjay Varma G**  [Profile](https://dhananjayvarmag.github.io/)
 
 ## Acknowledgments
 
